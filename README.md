@@ -49,3 +49,39 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
+Примеры:
+
+```
+Для получения публикации нужно выполнить запрос:
+GET/api/v1/posts/{id}/
+Ответ:
+{
+"id": 0,
+"author": "string",
+"text": "string",
+"pub_date": "2019-08-24T14:15:22Z",
+"image": "string",
+"group": 0
+}
+Для получения токена нужно выполнить запрос:
+POST/api/v1/jwt/create/
+{
+"username": "string",
+"password": "string"
+}
+Ответ:
+400
+{
+"username": [
+"Обязательное поле."
+],
+"password": [
+"Обязательное поле."
+]
+}
+Ответ:
+200
+{
+"refresh": "string",
+"access": "string"
+}
